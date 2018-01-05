@@ -1,0 +1,67 @@
+# do not touch this line
+configVersion: 2
+
+description: Humidity App with Color Tolerance function added
+keywords: ''
+name: humidityAppTest
+shortName: humidityAppTest
+displayName: Humidity App Test
+
+sensors:
+  - humidity
+screens:
+  - - LowerValueR
+  - - LowerValueG
+  - - LowerValueB
+  - - HigherValueR
+  - - HigherValueG
+  - - HigherValueB
+  - - line
+dataTypes:
+  monitor:
+    humidity: int
+widgets:
+  LowerValueR:
+    control: range
+    event: LowRed
+    min: 0
+    max: 255
+    label: Lower Red Value
+  LowerValueG:
+    control: range
+    event: LowGreen
+    min: 0
+    max: 255
+    label: Lower Green Value
+  LowerValueB:
+    control: range
+    event: LowBlue
+    min: 0
+    max: 255
+    label: Lower Blue Value
+  HigherValueR:
+    control: range
+    event: HighRed
+    min: 0
+    max: 255
+    label: Higher Red Value
+  HigherValueG:
+    control: range
+    event: HighGreen
+    min: 0
+    max: 255
+    label: Higher Green Value
+  HigherValueB:
+    control: range
+    event: HighBlue
+    min: 0
+    max: 255
+    label: Higher Blue Value
+  line:
+    display: line
+    type: monitor
+    format: fixed
+    keys: humidity
+    realtime: false
+    label: Humidity
+    refresh: 60
